@@ -15,9 +15,37 @@ class FruitCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var promotionalPriceLabel: UILabel!
     @IBOutlet weak var oldPriceLabel: UILabel!
+    @IBOutlet weak var statusLabel: CustomLabel!
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var favorButton: UIButton!
-    
+    var isFavor = false
+    var fruit: Fruit? {
+        didSet {
+            fruitImageView.image = UIImage(named: fruit!.imageName)
+            fruitNameLabel.text = fruit?.name
+            unitLabel.text = fruit?.unit
+            promotionalPriceLabel.text = "$\(fruit!.protomationalPrice)"
+            oldPriceLabel.text = "$\(fruit!.price)"
+            switch fruit?.status {
+            case .Empty:
+                statusLabel.isHidden = true
+                break
+            case.FreeShip(let content):
+                statusLabel.text = content
+                statusLabel.backgroundColor = .systemBlue
+                statusLabel.textColor = .white
+                break
+            case .Sale(let content):
+                statusLabel.text = content
+                statusLabel.backgroundColor = .systemYellow
+                statusLabel.textColor = .white
+                break
+            default:
+                break
+            }
+            
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,10 +55,17 @@ class FruitCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func cartButtonClick(_ sender: UIButton) {
-        print("cartButtonClick")
+        
     }
     
     @IBAction func favorButtonClick(_ sender: UIButton) {
-        print("favorButtonClick")
+        isFavor = !isFavor
+        
+        if isFavor {
+            favorButton.setImage(UIImage(systemName: "suit.heart.fill")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .normal)
+        } else {
+            favorButton.setImage(UIImage(systemName: "suit.heart")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
+        }
+        fruit?.isFavor = isFavor
     }
 }
