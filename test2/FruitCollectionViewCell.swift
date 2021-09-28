@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FruitDelegate : class{
+    func sendFruitData(with fruit:Fruit?)
+}
+
 class FruitCollectionViewCell: UICollectionViewCell {
 
     
@@ -15,10 +19,16 @@ class FruitCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var promotionalPriceLabel: UILabel!
     @IBOutlet weak var oldPriceLabel: UILabel!
-    @IBOutlet weak var statusLabel: CustomLabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    
+    @IBOutlet weak var containerView1: UIView!
+    @IBOutlet weak var containerView2: UIView!
+    
+    
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var favorButton: UIButton!
     var isFavor = false
+    weak var fruitDelegate : FruitDelegate?
     var fruit: Fruit? {
         didSet {
             fruitImageView.image = UIImage(named: fruit!.imageName)
@@ -51,6 +61,14 @@ class FruitCollectionViewCell: UICollectionViewCell {
         
         cartButton.setImage(UIImage(systemName: "cart")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         favorButton.setImage(UIImage(systemName: "suit.heart")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
+        
+        statusLabel.layer.cornerRadius = 5
+        containerView1.layer.cornerRadius = 10
+        containerView2.layer.cornerRadius = 10
+        
+        statusLabel.layer.masksToBounds = true
+        containerView1.layer.masksToBounds = true
+        containerView2.layer.masksToBounds = true
     }
     
     
@@ -67,5 +85,6 @@ class FruitCollectionViewCell: UICollectionViewCell {
             favorButton.setImage(UIImage(systemName: "suit.heart")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         }
         fruit?.isFavor = isFavor
+        fruitDelegate?.sendFruitData(with: fruit)
     }
 }

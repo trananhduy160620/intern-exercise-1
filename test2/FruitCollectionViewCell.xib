@@ -49,7 +49,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XK2-0F-sJB" customClass="CustomView" customModule="test2" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XK2-0F-sJB">
                         <rect key="frame" x="131" y="5" width="34" height="34"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xs-cy-Whh">
@@ -69,13 +69,8 @@
                             <constraint firstAttribute="height" constant="34" id="fJV-bl-fvF"/>
                             <constraint firstAttribute="bottom" secondItem="2Xs-cy-Whh" secondAttribute="bottom" id="yzE-S2-1Ht"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Ship" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMB-NZ-7QN" customClass="CustomLabel" customModule="test2" customModuleProvider="target">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Ship" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMB-NZ-7QN">
                         <rect key="frame" x="115" y="91" width="50" height="20"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
@@ -85,13 +80,8 @@
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="7"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jk-uH-rU9" customClass="CustomView" customModule="test2" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Jk-uH-rU9">
                         <rect key="frame" x="131" y="171" width="34" height="34"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhi-R6-H0v">
@@ -111,11 +101,6 @@
                             <constraint firstAttribute="bottom" secondItem="Jhi-R6-H0v" secondAttribute="bottom" id="p8B-Dv-aON"/>
                             <constraint firstAttribute="trailing" secondItem="Jhi-R6-H0v" secondAttribute="trailing" id="vVo-X5-1p1"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="$6.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7P-HB-ABR">
                         <rect key="frame" x="5" y="180" width="35" height="20"/>
@@ -163,6 +148,8 @@
             <size key="customSize" width="261" height="351"/>
             <connections>
                 <outlet property="cartButton" destination="Jhi-R6-H0v" id="2NC-24-WVE"/>
+                <outlet property="containerView1" destination="XK2-0F-sJB" id="3rM-Ui-DlY"/>
+                <outlet property="containerView2" destination="4Jk-uH-rU9" id="e2o-oE-Odt"/>
                 <outlet property="favorButton" destination="2Xs-cy-Whh" id="keO-7j-OsB"/>
                 <outlet property="fruitImageView" destination="m8R-74-Lx7" id="ix4-pC-Mg8"/>
                 <outlet property="fruitNameLabel" destination="wym-od-cNH" id="HTi-qe-Qyi"/>
@@ -174,11 +161,6 @@
             <point key="canvasLocation" x="-65" y="13"/>
         </collectionViewCell>
     </objects>
-    <designables>
-        <designable name="LMB-NZ-7QN">
-            <size key="intrinsicContentSize" width="46" height="12"/>
-        </designable>
-    </designables>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="mae-mu-U1iYwZ8Dx7k-unsplash" width="3337" height="4171"/>

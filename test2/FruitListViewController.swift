@@ -51,20 +51,20 @@ class FruitListViewController: UIViewController {
                       price: 7.0,
                       protomationalPrice: 6.6,
                       isFavor: false, rating: 5, ratingCout: 50, status: .Empty),
-                Fruit(name: "Tangerine",
-                      imageName: "mae-mu-U1iYwZ8Dx7k-unsplash",
-                      description: "Having healthy levels of vitamin C in your body has been tied to having healthy skin. Vitamin C has been shown to play a vital role in how your body makes collagen. Collagen is what makes our skin appear youthful. Vitamin C has also been shown to possibly prevent and treat skin damage caused by sun exposure.v",
-                      unit: "Price per kg",
-                      price: 3.5,
-                      protomationalPrice: 3.2,
-                      isFavor: false, rating: 5, ratingCout: 50, status: .Sale("Sale 12%")),
                 Fruit(name: "Papaya",
                       imageName: "charles-deluvio-yPI38imbQSI-unsplash",
                       description: "Carica papaya is the scientific name of the orange and green fruit known more commonly as papaya. It tastes sweet and has a soft texture that many find appealing. The seeds are also edible, although they’re more bitter than the fruit itself.",
                       unit: "Price per kg",
                       price: 5.4,
                       protomationalPrice: 4.8,
-                      isFavor: false, rating: 5, ratingCout: 50, status: .Empty)]
+                      isFavor: false, rating: 5, ratingCout: 50, status: .Empty),
+                Fruit(name: "Tangerine",
+                      imageName: "mae-mu-U1iYwZ8Dx7k-unsplash",
+                      description: "Having healthy levels of vitamin C in your body has been tied to having healthy skin. Vitamin C has been shown to play a vital role in how your body makes collagen. Collagen is what makes our skin appear youthful. Vitamin C has also been shown to possibly prevent and treat skin damage caused by sun exposure.v",
+                      unit: "Price per kg",
+                      price: 3.5,
+                      protomationalPrice: 3.2,
+                      isFavor: false, rating: 5, ratingCout: 50, status: .Sale("Sale 12%"))]
     }
 
 }
@@ -74,6 +74,15 @@ extension FruitListViewController : UICollectionViewDelegate, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let fruit = fruitsData[indexPath.row]
+        let data = ["Data":["FruitItem": fruit]]
+        NotificationCenter.default.post(name: .fruitData, object: nil, userInfo: data)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "DetailFruitViewController") as! DetailFruitViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
         
     }
     
@@ -91,5 +100,10 @@ extension FruitListViewController : UICollectionViewDataSource {
     }
     
     
+}
+extension Notification.Name {
+    static var fruitData : Notification.Name {
+        return .init("FruitData")
+    }
 }
 

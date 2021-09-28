@@ -18,6 +18,9 @@
 		3A3F795426FB896D00B82F58 /* BPtypewriteStrikethrough.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F795326FB896C00B82F58 /* BPtypewriteStrikethrough.ttf */; };
 		3A3F795726FBAEC600B82F58 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F795626FBAEC600B82F58 /* CustomView.swift */; };
 		3A3F795D26FCEE7C00B82F58 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F795C26FCEE7B00B82F58 /* Fruit.swift */; };
+		3A3F796027000D0100B82F58 /* DetailFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3F795F27000CFF00B82F58 /* DetailFruitViewController.swift */; };
+		3A9C73B52702663C00456FAC /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C73B42702663C00456FAC /* CustomLabel.swift */; };
+		3A9C73B82702665F00456FAC /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C73B72702665F00456FAC /* CustomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		3A3F795326FB896C00B82F58 /* BPtypewriteStrikethrough.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPtypewriteStrikethrough.ttf; sourceTree = "<group>"; };
 		3A3F795626FBAEC600B82F58 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		3A3F795C26FCEE7B00B82F58 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		3A3F795F27000CFF00B82F58 /* DetailFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFruitViewController.swift; sourceTree = "<group>"; };
+		3A9C73B42702663C00456FAC /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		3A9C73B72702665F00456FAC /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,10 @@
 				3A3F794E26FB71C700B82F58 /* FruitCollectionViewCell.xib */,
 				3A3F795326FB896C00B82F58 /* BPtypewriteStrikethrough.ttf */,
 				3A3F795626FBAEC600B82F58 /* CustomView.swift */,
+				3A9C73B42702663C00456FAC /* CustomLabel.swift */,
+				3A9C73B72702665F00456FAC /* CustomImageView.swift */,
 				3A3F795C26FCEE7B00B82F58 /* Fruit.swift */,
+				3A3F795F27000CFF00B82F58 /* DetailFruitViewController.swift */,
 			);
 			path = test2;
 			sourceTree = "<group>";
@@ -89,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A3F794826FB706100B82F58 /* Build configuration list for PBXNativeTarget "test2" */;
 			buildPhases = (
+				532B3610CEDAA91EC5F9235C /* [CP] Check Pods Manifest.lock */,
 				3A3F793026FB705A00B82F58 /* Sources */,
 				3A3F793126FB705A00B82F58 /* Frameworks */,
 				3A3F793226FB705A00B82F58 /* Resources */,
+				762DC5FC45814D2878B978B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,17 +160,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		532B3610CEDAA91EC5F9235C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-test2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		762DC5FC45814D2878B978B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A3F793026FB705A00B82F58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3A3F795D26FCEE7C00B82F58 /* Fruit.swift in Sources */,
+				3A9C73B82702665F00456FAC /* CustomImageView.swift in Sources */,
 				3A3F795726FBAEC600B82F58 /* CustomView.swift in Sources */,
 				3A3F793C26FB705A00B82F58 /* FruitListViewController.swift in Sources */,
 				3A3F794F26FB71C700B82F58 /* FruitCollectionViewCell.swift in Sources */,
 				3A3F793826FB705A00B82F58 /* AppDelegate.swift in Sources */,
+				3A3F796027000D0100B82F58 /* DetailFruitViewController.swift in Sources */,
 				3A3F793A26FB705A00B82F58 /* SceneDelegate.swift in Sources */,
+				3A9C73B52702663C00456FAC /* CustomLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
