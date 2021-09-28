@@ -17,10 +17,18 @@ class DetailFruitViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var fruitLabel: UILabel!
     @IBOutlet weak var fruitImageView: UIImageView!
+    @IBOutlet weak var fruitNameLabel: UILabel!
     
+    @IBOutlet weak var ratingLabel: UILabel!
+    
+    @IBOutlet weak var ratingCountLabel: UILabel!
+    
+    @IBOutlet weak var contentTextView: UITextView!
+    
+    @IBOutlet weak var totalLabel: UILabel!
     
     var count = 0
-    
+    var fruit : Fruit?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,26 +40,22 @@ class DetailFruitViewController: UIViewController {
         customAvocadoButton()
         customFruitLabel()
         customFruiImageView()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(reveiceNotification(notification:)), name: .fruitData, object: nil)
+        updateUI()
         
     }
     
-    
-    @objc func reveiceNotification(notification: Notification) {
-        if let data = notification.userInfo?["Data"] as? [String: Any] {
-            if let fruit = data["FruitItem"] as? Fruit {
-                fruitImageView.image = UIImage(named: fruit.imageName)
-                print(fruit)
-            }
+    func updateUI() {
+        if let fruitData = fruit {
+            fruitNameLabel.text = fruitData.name
+            fruitImageView.image = UIImage(named: fruitData.imageName)
+            ratingLabel.text = "\(fruitData.rating)"
+            ratingCountLabel.text = "(\(fruitData.ratingCout))"
+            contentTextView.text = fruitData.description
+            contentTextView.isScrollEnabled = false
         }
-//        print(notification.object)
-//        if let fruit = notification.object as? Fruit {
-//            fruitImageView.image = UIImage(named: fruit.imageName)
-//            print(fruit)
-//        }
-//        print(notification.userInfo)
     }
+    
+  
    
     func customMinusButton() {
         minusButton.layer.cornerRadius = 7
@@ -100,6 +104,7 @@ class DetailFruitViewController: UIViewController {
     
     @IBAction func sojaButtonClick(_ sender: UIButton) {
         print("sojaButtonClick")
+        
     }
     
     @IBAction func senfButtonclick(_ sender: UIButton) {
@@ -117,5 +122,13 @@ class DetailFruitViewController: UIViewController {
     
 
 }
+//extension DetailFruitViewController : FruitDelegate {
+//    func sendFruitData(with fruit: Fruit) {
+//        print(fruit)
+//        self.fruitNameLabel.text = fruit.name
+//
+//        fruitImageView.image = UIImage(named: fruit.imageName)
+//    }
+//}
 
 

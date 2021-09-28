@@ -8,7 +8,7 @@
 import UIKit
 
 protocol FruitDelegate : class{
-    func sendFruitData(with fruit:Fruit?)
+    func sendFruitData(with fruit:Fruit)
 }
 
 class FruitCollectionViewCell: UICollectionViewCell {
@@ -85,6 +85,7 @@ class FruitCollectionViewCell: UICollectionViewCell {
             favorButton.setImage(UIImage(systemName: "suit.heart")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
         }
         fruit?.isFavor = isFavor
-        fruitDelegate?.sendFruitData(with: fruit)
+        guard let fruitData = fruit else { return }
+        fruitDelegate?.sendFruitData(with: fruitData)
     }
 }
