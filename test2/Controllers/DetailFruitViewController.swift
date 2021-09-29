@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AARatingBar
 
 class DetailFruitViewController: UIViewController {
 
@@ -26,6 +27,8 @@ class DetailFruitViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     
     @IBOutlet weak var totalLabel: UILabel!
+    
+    @IBOutlet weak var ratingBar: AARatingBar!
     
     var count = 0
     var fruit : Fruit?
@@ -52,6 +55,7 @@ class DetailFruitViewController: UIViewController {
             ratingCountLabel.text = "(\(fruitData.ratingCout))"
             contentTextView.text = fruitData.description
             contentTextView.isScrollEnabled = false
+            ratingBar.value = CGFloat(fruitData.rating)
         }
     }
     

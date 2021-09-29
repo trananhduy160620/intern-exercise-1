@@ -1,0 +1,16 @@
+PODS:
+  - AARatingBar (1.2)
+
+DEPENDENCIES:
+  - AARatingBar
+
+SPEC REPOS:
+  trunk:
+    - AARatingBar
+
+SPEC CHECKSUMS:
+  AARatingBar: dc54d24687ae97688ffdb29738332d0bc5c0c09f
+
+PODFILE CHECKSUM: 4e1f514e42e0224f8222254a2a63ccd768ef9279
+
+COCOAPODS: 1.10.1

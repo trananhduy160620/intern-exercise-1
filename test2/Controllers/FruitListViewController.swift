@@ -14,6 +14,7 @@ class FruitListViewController: UIViewController {
     
     var fruitsData = [Fruit]()
     weak var fruitDelegate:FruitDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fruitCollectionView.dataSource = self
@@ -95,9 +96,27 @@ extension FruitListViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FruitCell", for: indexPath) as! FruitCollectionViewCell
-        cell.fruit = fruitsData[indexPath.row]
+        let fruitItem = fruitsData[indexPath.row]
+        cell.fruit = fruitItem
         cell.layer.cornerRadius = 10
+        if let isFavor = UserDefaults.standard.value(forKey: fruitItem.name) as? Bool {
+            if isFavor {
+                cell.favorButton.setImage(UIImage(systemName: "suit.heart.fill")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), for: .normal)
+            } else {
+                cell.favorButton.setImage(UIImage(systemName: "suit.heart")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
+            }
+        }
+        
+        cell.fruitDelegate = self
         return cell
+    }
+    
+    
+}
+extension FruitListViewController : FruitDelegate {
+    func sendFruitData(with fruit: Fruit) {
+        
+        UserDefaults.standard.setValue(fruit.isFavor, forKey: fruit.name)
     }
     
     

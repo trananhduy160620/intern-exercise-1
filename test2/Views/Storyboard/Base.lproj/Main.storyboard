@@ -68,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpI-cK-8a8" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1680"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1560"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWC-L5-5hH" customClass="CustomView" customModule="test2" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="20" width="394" height="300"/>
@@ -95,13 +95,24 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxZ-Lx-6MS">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxZ-Lx-6MS" customClass="AARatingBar" customModule="AARatingBar">
                                                                 <rect key="frame" x="49" y="139" width="120" height="21"/>
-                                                                <color key="backgroundColor" red="1" green="0.91019769189999999" blue="0.80589273589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.96462911370000004" green="0.96193772550000001" blue="0.8822672963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="120" id="S7R-fj-Ula"/>
                                                                     <constraint firstAttribute="height" constant="21" id="d0G-GD-qh9"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                                        <integer key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                        <color key="value" systemColor="systemYellowColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                        <real key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(75)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bi-kZ-Hcf">
                                                                 <rect key="frame" x="172" y="139" width="36" height="21"/>
@@ -586,7 +597,7 @@
                         <constraints>
                             <constraint firstItem="Ljn-Un-2k7" firstAttribute="leading" secondItem="eQ0-gA-DVk" secondAttribute="leading" id="5GV-F6-oTh"/>
                             <constraint firstItem="Ljn-Un-2k7" firstAttribute="trailing" secondItem="eQ0-gA-DVk" secondAttribute="trailing" id="D7h-HZ-OoW"/>
-                            <constraint firstItem="hpI-cK-8a8" firstAttribute="height" secondItem="e4h-B8-NfM" secondAttribute="height" multiplier="1.4" priority="250" id="Jc9-P7-McX"/>
+                            <constraint firstItem="hpI-cK-8a8" firstAttribute="height" secondItem="e4h-B8-NfM" secondAttribute="height" multiplier="1.3" priority="250" id="Jc9-P7-McX"/>
                             <constraint firstItem="Ljn-Un-2k7" firstAttribute="bottom" secondItem="eQ0-gA-DVk" secondAttribute="bottom" id="MMx-PS-bhU"/>
                             <constraint firstItem="hpI-cK-8a8" firstAttribute="width" secondItem="e4h-B8-NfM" secondAttribute="width" id="dwX-65-1yU"/>
                             <constraint firstItem="Ljn-Un-2k7" firstAttribute="top" secondItem="eQ0-gA-DVk" secondAttribute="top" id="l6q-AB-Z9m"/>
@@ -603,6 +614,7 @@
                         <outlet property="fruitNameLabel" destination="ahz-yu-vtF" id="BNQ-re-KWI"/>
                         <outlet property="minusButton" destination="nD6-Yg-dqg" id="Jyr-vy-gFp"/>
                         <outlet property="plusButton" destination="VZj-Ve-Zqc" id="n5r-hh-8rr"/>
+                        <outlet property="ratingBar" destination="ZxZ-Lx-6MS" id="RIc-Ey-JT6"/>
                         <outlet property="ratingCountLabel" destination="5Bi-kZ-Hcf" id="bEh-jp-Qqc"/>
                         <outlet property="ratingLabel" destination="e3a-HJ-2Y3" id="312-Jo-hBU"/>
                         <outlet property="senfButton" destination="RPy-vb-oJO" id="5ad-f5-hjI"/>
@@ -653,6 +665,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
